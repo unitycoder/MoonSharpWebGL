@@ -45,8 +45,9 @@ public class Interpreter : MonoBehaviour
         if (makeDump)
         {
             Table dump = UserData.GetDescriptionOfRegisteredTypes(true);
-            print(Application.dataPath + "/testdump.lua");
-            System.IO.File.WriteAllText(Application.dataPath + "/testdump.lua", dump.Serialize());
+            var outpath = Application.dataPath + "/Scripts/Dump/testdump.lua";
+            print(outpath);
+            System.IO.File.WriteAllText(outpath, dump.Serialize());
         }
 #endif
     }
